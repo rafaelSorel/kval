@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-27 23:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+msgid ""
+"<b>{appname}</b> already installed with the last version: <b>{appversion}</b>"
+msgstr ""
+"<b>{appname}</b> est déjà installé avec la dernière version: <b>{appversion}"
+"</b>"
+
+msgid "Application download problem !"
+msgstr "Problème de téléchargement d'application !"
+
+msgid "Application format missmatch !"
+msgstr "Incompatibilité de format de l'application !"
+
+msgid "Application install problem"
+msgstr "Problème installation application"
+
+msgid "Available devices for vod download..."
+msgstr "Périphériques disponibles pour le téléchargement de vod ..."
+
+msgid "Check {appname} in progress."
+msgstr "Verification {appname} en cours."
+
+msgid "Could not extract application"
+msgstr "Problème d'extraction de l'application"
+
+msgid "Could not find application !"
+msgstr "Application introuvable !"
+
+msgid "Could not remove application from database !"
+msgstr "Impossible de supprimer l'application de la base de données !"
+
+#, c-format
+msgid "Could you please validate:<br><b>%s</b>"
+msgstr "Veuillez valider l'addresse:<br><b>%s</b> ?"
+
+msgid "Disk space..."
+msgstr "Espace disque..."
+
+msgid "Do you really want to uninstall {appname} ?"
+msgstr "Voulez-vous vraiment désinstaller {appname} ?"
+
+msgid "Download speed"
+msgstr ""
+
+msgid "Download {appname} in progress ..."
+msgstr "Téléchargement {appname} en cours ..."
+
+msgid "Error"
+msgstr "Erreur"
+
+msgid "Error occured !"
+msgstr "Erreur est survenue !"
+
+msgid "Error occured while trying to check disks."
+msgstr "Une erreur est survenue lors de la vérification des disques."
+
+msgid "Extract {appname} in progress."
+msgstr "Extraction {appname} en cours."
+
+msgid "Extraction of stream infomations..."
+msgstr "Extraction des infomations de flux ..."
+
+msgid "Filename"
+msgstr ""
+
+#, c-format
+msgid "Format <b>%s</b>"
+msgstr "Format <b> %s </ b>"
+
+#, c-format
+msgid "Formating %s"
+msgstr "Formater %s"
+
+#, c-format
+msgid ""
+"Formatting <b>%s</b> in progress, this could take several minutes, please do "
+"not interrupt..."
+msgstr ""
+"Le formatage de <b>%s</b> est en cours, cela peut prendre plusieurs minutes,"
+"veuillez ne pas interrompre ..."
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Install {appname} in progress."
+msgstr "Installation {appname} en cours."
+
+msgid "Installation cancelled by user"
+msgstr ""
+
+msgid "Installation..."
+msgstr "Installation..."
+
+msgid "Low disk space."
+msgstr "Espace disque faible."
+
+msgid "Low disk space..."
+msgstr "Espace disque faible..."
+
+msgid "No"
+msgstr "Non"
+
+#, c-format
+msgid ""
+"Not enough space to download video:<br> <i>%s</i>:    <b>%s</b><br> <i>Disk "
+"space</i>:    <b><i>%s</b></i>"
+msgstr ""
+"Espace insuffisant pour télécharger la vidéo:<br><i>%s</i>:    <b>%s</b><br> "
+"<i>Espace disque</i>: <b><i>%s</b></i>"
+
+msgid ""
+"Please insert external storage media in order to <b>download and play</b>, "
+"or change the VOD settings to <b>online streaming</b>."
+msgstr ""
+"Insérez une clé Usb afin de pouvoir télécharger les videos.<br>Vous pouvez "
+"aussi <b>Activer</b> paramètres/VOD/video stream"
+
+msgid "Success install application."
+msgstr "L'application a été installée avec succès."
+
+msgid "Success uninstall {appname}"
+msgstr "{appname} est désinstallé avec succès"
+
+msgid ""
+"The installation will startup, don't <b>shutdown</b> or <b>disconnect</b> "
+"the kval box"
+msgstr ""
+"L'installation va démarrer, veuillez ne pas <b>éteindre</b> ni "
+"<b>déconnecté</b> la kval box."
+
+msgid "Time remaining"
+msgstr ""
+
+msgid "Unable to create download folder."
+msgstr "Impossible de créer le dossier de téléchargement."
+
+msgid "Uninstall {appname} ?"
+msgstr "Désinstaller {appname} ?"
+
+msgid "Validation"
+msgstr "Validation"
+
+msgid "Wrong store address."
+msgstr "l'addresse du store est incorrecte."
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "You have to select a valid media storage."
+msgstr "Vous devez sélectionner un stockage de média valide."
+
+#, c-format
+msgid ""
+"You need to format <b>%s</b> in order to use it for vod contents download."
+msgstr ""
+"Vous devez formater <b>%s</b> afin de pouvoir l'utiliser pour les "
+"téléchargements vod"

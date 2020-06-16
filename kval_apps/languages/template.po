@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-27 23:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+msgid ""
+"<b>{appname}</b> already installed with the last version: <b>{appversion}</b>"
+msgstr ""
+
+msgid "Application download problem !"
+msgstr ""
+
+msgid "Application format missmatch !"
+msgstr ""
+
+msgid "Application install problem"
+msgstr ""
+
+msgid "Available devices for vod download..."
+msgstr ""
+
+msgid "Check {appname} in progress."
+msgstr ""
+
+msgid "Could not extract application"
+msgstr ""
+
+msgid "Could not find application !"
+msgstr ""
+
+msgid "Could not remove application from database !"
+msgstr ""
+
+#, c-format
+msgid "Could you please validate:<br><b>%s</b>"
+msgstr ""
+
+msgid "Disk space..."
+msgstr ""
+
+msgid "Do you really want to uninstall {appname} ?"
+msgstr ""
+
+msgid "Download speed"
+msgstr ""
+
+msgid "Download {appname} in progress ..."
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Error occured !"
+msgstr ""
+
+msgid "Error occured while trying to check disks."
+msgstr ""
+
+msgid "Extract {appname} in progress."
+msgstr ""
+
+msgid "Extraction of stream infomations..."
+msgstr ""
+
+msgid "Filename"
+msgstr ""
+
+#, c-format
+msgid "Format <b>%s</b>"
+msgstr ""
+
+#, c-format
+msgid "Formating %s"
+msgstr ""
+
+#, c-format
+msgid ""
+"Formatting <b>%s</b> in progress, this could take several minutes, please do "
+"not interrupt..."
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Install {appname} in progress."
+msgstr ""
+
+msgid "Installation cancelled by user"
+msgstr ""
+
+msgid "Installation..."
+msgstr ""
+
+msgid "Low disk space."
+msgstr ""
+
+msgid "Low disk space..."
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+#, c-format
+msgid ""
+"Not enough space to download video:<br> <i>%s</i>:    <b>%s</b><br> <i>Disk "
+"space</i>:    <b><i>%s</b></i>"
+msgstr ""
+
+msgid ""
+"Please insert external storage media in order to <b>download and play</b>, "
+"or change the VOD settings to <b>online streaming</b>."
+msgstr ""
+
+msgid "Success install application."
+msgstr ""
+
+msgid "Success uninstall {appname}"
+msgstr ""
+
+msgid ""
+"The installation will startup, don't <b>shutdown</b> or <b>disconnect</b> "
+"the kval box"
+msgstr ""
+
+msgid "Time remaining"
+msgstr ""
+
+msgid "Unable to create download folder."
+msgstr ""
+
+msgid "Uninstall {appname} ?"
+msgstr ""
+
+msgid "Validation"
+msgstr ""
+
+msgid "Wrong store address."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "You have to select a valid media storage."
+msgstr ""
+
+#, c-format
+msgid ""
+"You need to format <b>%s</b> in order to use it for vod contents download."
+msgstr ""

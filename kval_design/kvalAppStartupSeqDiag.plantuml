@@ -1,0 +1,67 @@
+@startuml
+header version 1.0.0
+title Application Framework\nStartup Sequence
+
+participant KvalAppElement << (C,#ADD1B2) >>
+box "KvalApp namespace" #BDDEFD
+participant Manager << (C,#ADD1B2) >>
+participant DeployementEngine << (C,#ADD1B2) >>
+participant Service << (C,#ADD1B2) >>
+participant Proxy << (C,#ADD1B2) >>
+participant LauncherEngine << (C,#ADD1B2) >>
+participant ActivityWorker << (C,#ADD1B2) >>
+end box
+
+activate KvalAppElement
+create Manager
+KvalAppElement -> Manager: Create
+KvalAppElement --> Manager: Start
+deactivate KvalAppElement
+activate Manager
+create DeployementEngine
+Manager -> DeployementEngine: Create
+
+create Proxy
+Manager -> Proxy: Create
+create LauncherEngine
+Manager -> LauncherEngine: Create(Share (DeployementEngine, Proxy))
+Manager --> LauncherEngine: Start
+activate LauncherEngine
+
+Manager -> DeployementEngine: extractAvailableApps()
+activate DeployementEngine
+    DeployementEngine --> LauncherEngine: syncStart(path, module, getapps)
+    LauncherEngine -> LauncherEngine : exec python module attribute
+    LauncherEngine --> DeployementEngine: list<apps>
+    deactivate LauncherEngine
+    DeployementEngine -> Manager: availableApps
+deactivate DeployementEngine
+
+Manager -> Manager: extractServiceApps
+
+loop #CCE5FD Number of Service apps 
+    Manager --> LauncherEngine: asyncStart(appid, path, args, deps, is_service)
+    activate LauncherEngine
+        LauncherEngine -> LauncherEngine: CheckRunningApp
+        create ActivityWorker
+        LauncherEngine -> ActivityWorker: create
+        LauncherEngine -> Proxy: Register(workerid, appid)
+    deactivate
+    activate Proxy
+        Proxy -> Manager: getPerm(appid)
+        Manager -> Proxy: perm
+        create Service
+        Proxy -> Service: create(appid, worker, perm, enabled)
+        activate Service
+        Service -> Proxy: success
+        Proxy -> LauncherEngine: Register OK
+    deactivate
+    activate LauncherEngine
+        LauncherEngine --> ActivityWorker: Start
+    activate ActivityWorker
+        ... ~~delay~~ ...
+end
+
+
+footer Page %page% of %lastpage%
+@enduml

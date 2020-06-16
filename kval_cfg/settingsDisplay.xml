@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+
+<settings>
+<category id="misc" label="STR_SETTINGS_SYSTEM" icon="file://KVAL_RES_PATH/settings/setting.png">
+  <item id="refresh"  label="STR_SETTINGS_SYSTEM_REFRESH" type="action" default="" values=""/>
+  <item id="language" label="STR_SETTINGS_SYSTEM_LANGUAGE" type="choicemenu" default="en-US" values="STR_SETTINGS_SYSTEM_LANGUAGE_VALUES"/>
+  <item id="timezone" label="STR_SETTINGS_SYSTEM_TIMEZONE" type="choicemenu" default="France" values="STR_SETTINGS_SYSTEM_TIMEZONE_VAL"/>
+  <item id="screenres" label="STR_SETTINGS_SYSTEM_SCREEN_RES" type="dynchoicemenu" default="" values=""/>
+  <item id="timerefresh" label="STR_SETTINGS_SYSTEM_REFRESH_DATE_TIME" type="action" default="" values=""/>
+</category>
+<category id="network" label="STR_SETTINGS_NETWORK" icon="file://KVAL_RES_PATH/settings/network_small.png">
+  <item id="refresh"  label="STR_SETTINGS_SYSTEM_REFRESH" type="action" default="" values=""/>
+  <item id="status"  label="STR_SETTINGS_NETWORK_STATUS" type="info" default="Disconnected" values=""/>
+  <item id="if"  label="STR_SETTINGS_NETWORK_CONNECTION_TYPE" type="choicemenu" default="Ethernet" values="Ethernet|WiFi"/>
+  <item id="wifiscan"  label="STR_SETTINGS_NETWORK_WIFI_SCAN" type="dynchoicemenu" default="" values=""/>
+  <item id="method"  label="STR_SETTINGS_NETWORK_METHOD" type="choicemenu" default="DHCP" values="STR_SETTINGS_NETWORK_METHOD_VAL"/>
+  <item id="mac"  label="STR_SETTINGS_NETWORK_MAC_ADDRESS" type="info" default="" values=""/>
+  <item id="ipv4"  label="STR_SETTINGS_NETWORK_IPV4_ADDRESS" type="text" default="0.0.0.0" values=""/>
+  <item id="ipv6"  label="STR_SETTINGS_NETWORK_IPV6_ADDRESS" type="text" default="0.0.0.0" values=""/>
+  <item id="subnet"  label="STR_SETTINGS_NETWORK_SUBNET_MASK" type="text" default="0.0.0.0" values=""/>
+  <item id="gateway"  label="STR_SETTINGS_NETWORK_GATEWAY" type="text" default="0.0.0.0" values=""/>
+  <item id="dns1"  label="STR_SETTINGS_NETWORK_PRIM_DNS" type="text" default="0.0.0.0" values=""/>
+  <item id="dns2"  label="STR_SETTINGS_NETWORK_SECOND_DNS" type="text" default="0.0.0.0" values=""/>
+  <item id="proxy"  label="STR_SETTINGS_NETWORK_PROXY_ACTIV" type="bool" default="0" values=""/>
+  <item id="proxyaddr"  label="STR_SETTINGS_NETWORK_PROXY_ADDRESS" type="text" default="" values=""/>
+  <item id="proxyport"  label="STR_SETTINGS_NETWORK_PROXY_PORT" type="text" default="" values=""/>
+</category>
+<category id="vod" label="STR_SETTINGS_VOD" icon="file://KVAL_RES_PATH/settings/vod_small.png">
+  <item id="refresh"  label="STR_SETTINGS_SYSTEM_REFRESH" type="action" default="" values=""/>
+  <item id="clearcache" label='STR_SETTINGS_VOD_CLEAR_CACHE' type="action" default="" values="" />
+  <item id="cleardownloads" label='STR_SETTINGS_VOD_CLEAR_DOWN' type="action" default="" values="" />
+  <item id="cacheduration" label='STR_SETTINGS_VOD_CACHE_DURATION' type="choicemenu" default="1" values="1|2|3|4|5|6|7" />
+  <item id="precache" label='STR_SETTINGS_VOD_BUF_SIZE' type="choicemenu" default="3" values="3|4|5|6|7" />
+  <item id="stream" label='STR_SETTINGS_VOD_STREAM' type="bool" default="0" values=""/>
+  <item id="usbload"  label="STR_SETTINGS_VOD_FILE_USB" type="action" default="" values=""/>
+  <item id="srvaddr"  label="STR_SETTINGS_VOD_SRV_ADDR" type="text" default="" values=""/>
+  <item id="activate"  label="STR_SETTINGS_VOD_SRV_ADDR_ACTIVATE" type="action" default="" values=""/>
+ </category>
+<category id="live" label="STR_SETTINGS_LIVETV" icon="file://KVAL_RES_PATH/settings/live_small.png">
+  <item id="refresh"  label="STR_SETTINGS_SYSTEM_REFRESH" type="action" default="" values=""/>
+  <item id="epg" label='STR_SETTINGS_LIVETV_EPG_ACTIVATION' type="bool" default="1" values="" />
+  <item id="epgcache" label='STR_SETTINGS_LIVETV_EPG_DURATION' type="choicemenu" default="1" values="1|2|3|4|5" />
+  <item id="epgdisplay" label='STR_SETTINGS_LIVETV_EPG_LIST' type="bool" default="1" values="" />
+  <item id="usbload"  label="STR_SETTINGS_LIVETV_FILE_USB" type="action" default="" values=""/>
+  <item id="srvaddr"  label="STR_SETTINGS_LIVETV_SRV_ADDR" type="text" default="" values=""/>
+  <item id="activate"  label="STR_SETTINGS_LIVETV_SRV_ADDR_ACTIVATE" type="action" default="" values=""/>
+</category>
+<category id="info" label="STR_SETTINGS_INFOS" icon="file://KVAL_RES_PATH/settings/informations.png">
+  <item id="refresh"  label="STR_SETTINGS_SYSTEM_REFRESH" type="action" default="" values=""/>
+  <item id="ip"  label="STR_SETTINGS_INFOS_IP_ADDRESS" type="info" default="0.0.0.0" values=""/>
+  <item id="screenres" label="STR_SETTINGS_INFOS_SCREEN_RES" type="info" default="1920x1080p" values=""/>
+  <item id="elapsed" label="STR_SETTINGS_INFOS_STARTS_TIME" type="info" default="0 heures, 0 minutes" values=""/>
+  <item id="softversion" label="STR_SETTINGS_INFOS_SOFT_VER" type="info" default="kval-1.0.0" values=""/>
+  <item id="serialnumber" label="STR_SETTINGS_INFOS_SERIAL_NUMBER" type="info" default="" values=""/>
+</category>
+<category id="externalservices" source="external" sourceref="kval.service.settings" />
+</settings>

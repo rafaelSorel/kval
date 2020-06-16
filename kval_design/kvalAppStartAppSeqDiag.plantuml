@@ -1,0 +1,57 @@
+@startuml
+header version 1.0.0
+title Application Framework\nStart application sequence
+
+participant KvalAppElement << (C,#ADD1B2) >>
+box "KvalApp namespace" #C8E6FF
+participant Manager << (C,#ADD1B2) >>
+participant DeployementEngine << (C,#ADD1B2) >>
+participant Activity << (C,#ADD1B2) >>
+participant Proxy << (C,#ADD1B2) >>
+participant LauncherEngine << (C,#ADD1B2) >>
+participant ActivityWorker << (C,#ADD1B2) >>
+end box
+
+activate KvalAppElement
+KvalAppElement --> Manager: StartApp(appid)
+deactivate KvalAppElement
+activate Manager
+Manager -> DeployementEngine: getAppInfo
+activate DeployementEngine
+DeployementEngine -> Manager: appInfo
+deactivate
+
+
+Manager --> LauncherEngine: asyncStart(appid, path, args, deps, is_service)
+activate LauncherEngine
+    LauncherEngine -> LauncherEngine: CheckRunningApp
+    create ActivityWorker
+    LauncherEngine -> ActivityWorker: create
+    LauncherEngine -> Proxy: Register(workerid, appid)
+deactivate
+activate Proxy
+    Proxy -> Manager: getPerm(appid)
+    Manager -> Proxy: perm
+    create Activity
+    Proxy -> Activity: create(appid, worker, perm, enabled)
+    activate Activity
+    Activity -> Proxy: success
+    Proxy -> LauncherEngine: Register OK
+deactivate
+activate LauncherEngine
+    LauncherEngine --> ActivityWorker: Start
+activate ActivityWorker
+    ... ~~delay~~ ...
+alt startup failed or activity stopped
+    ActivityWorker --> LauncherEngine: Stopped
+    LauncherEngine --> Proxy: unregister(workerid, appid)
+    Proxy -> Activity: delete
+    destroy Activity
+    LauncherEngine --> ActivityWorker: cleanup & delete
+    deactivate
+    destroy ActivityWorker
+end
+    ... ...
+
+footer Page %page% of %lastpage%
+@enduml

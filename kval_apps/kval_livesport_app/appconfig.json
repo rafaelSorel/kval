@@ -1,0 +1,51 @@
+{
+   "id": "kval.livesport.app",
+   "name": "Live Sports",
+   "version": "2.0.0",
+   "provider-name": "kval-team",
+   "category": "video",
+   "ui-type": "video",
+   "requires": [],
+   "extension": [
+      {
+         "point": "kval.python.appsource",
+         "library": "default.py",
+         "extension": {
+            "point": "kval.update",
+            "library": "update.py"
+         }
+      },
+      {
+         "point": "kval.app.metadata",
+         "news": [],
+         "assets": {
+            "icon": "icon.png",
+            "back": "back.png",
+            "fanart": "fanart.jpg"
+         },
+         "summary": [
+            {
+               "lang": "en_gb",
+               "text": "Live Sport application"
+            },
+            {
+               "lang": "fr_fr",
+               "text": "Application Live Sport"
+            }
+         ],
+         "description": [
+            {
+               "lang": "en_gb",
+               "text": "livesport application"
+            },
+            {
+               "lang": "fr_fr",
+               "text": "livesport application."
+            }
+         ],
+         "language": [],
+         "platform": "all",
+         "size": []
+      }
+   ]
+}

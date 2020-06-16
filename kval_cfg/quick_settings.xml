@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quick_settings>
+  <vod>
+    <setting index='1' title='STR_QUICKSET_VOD_ADD_TO_FAV' icon=''/>
+    <setting index='2' title='STR_QUICKSET_VOD_EMPTY_CACHE' icon='' />
+    <setting index='3' title="STR_QUICKSET_VOD_REMOVE_FROM_FAV" icon='' />
+    <setting index='4' title='STR_QUICKSET_VOD_CLEAR_FAV' icon='' />
+  </vod>
+  <live_tv>
+    <setting index='1' title='STR_QUICKSET_TV_ADD_TO_FAV' icon=''/>
+    <setting index='2' title='STR_QUICKSET_TV_REMOVE_FROM_FAV' icon='' />
+    <setting index='3' title='STR_QUICKSET_TV_CLEAR_FAV' icon='' />
+  </live_tv>
+</quick_settings>

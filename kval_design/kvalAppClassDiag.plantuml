@@ -1,0 +1,194 @@
+@startuml
+' PyApplication Framework:
+
+' === Introduction 
+' Design a plug-in system for Kval application that extends Kval to several new 
+' external applications:
+
+' 1- System Applications:
+'     As Kval may run on several environement, this implies different ways of handling some subtilities
+'     (Settings for instance may be extented to an external plug-in settings system
+'     (firmware update, new I/O (blutooth, videogame controllers...))).
+' 2- Generic Applications:
+'     Those are the generic applications that may be extented to Kval(Video applications,
+'     new applications, game applications...)
+
+' === Requirements
+' 1- PyApplication should provide a json config file, this file should contain all the launch points
+' as well as all the meta data related to the appication (Refers to app.json template TODO: add config template).
+
+' 2- ApplicationManager will install the application and make it available to the user through UI.
+
+' 3- Python applications may use the builtin python module, as those module will be exposed to all python 
+' applications before the startup of the function.
+
+' 4- System PyApplication have more priveledges than generic application though, 
+' they may invoke a popup box during the UI lifetime
+' (Exp: Firmware update, user reboot request, subscription message ...)
+
+' 6- Generic application are allowed to manipulate their own application user interface,
+' beyond that scope they are not allowed to invoke or use any core system resources, the only
+' acceptable resource is the alert system, in the latter particular case, generic application
+' may display an alert at any point during the lifetime of the UI.
+
+' 7- Kval should expose application classes to interact with several componenet:
+'     - User Interface (Item, DiagBox, )
+'     - Media Player
+'     - Secure Engine
+'     - Async Actions
+'     - System Core Notifiyer
+'     - System Settings Extender
+'     - PyApplication settings Manipulator
+' skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             true
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam ArrowColor            #000000
+skinparam Linetype              ortho
+
+skinparam Class {
+    FontColor #000000
+    BorderColor #000000
+    BackgroundColor #FFFFFF
+    HeaderBackgroundColor #d5e8d4
+    StereotypeFontColor #000000
+    BorderThickness 1
+    AttributeFontColor #000000
+    AttributeFontSize 11
+}
+
+namespace KvalApplication << namespace >> #E1E2E2 {
+class Manager {
+    getApps()
+    refreshApps()
+    installApp()
+    uninstallApp()
+    updateApp()
+    addAppToFav()
+    startActivity()
+    startService()
+}
+
+enum Perm #fff2cc {
+SYSTEM
+GENERIC
+}
+
+class LauncherEngine {
+    m_workers: map<worker, appid>
+    Create()
+    syncStart()
+    asyncStart()
+    Stop()
+}
+
+class DeploymentEngine {
+    m_apps: list<PyApplication>
+    extractapps()
+    install(appid)
+    uninstall(appid)
+    update(appid)
+    favorite(appid)
+}
+class Proxy {
+    activities: list
+    services: list
+    loadView()
+    displayBox()
+    displayProgress()
+    updateProgress()
+    displayPage()
+    alert()
+}
+
+class Activity {
+    appid: string
+    worker: int
+    permission: Perm
+    enabled: bool
+    running: bool
+}
+
+class Service {
+    appid: string
+    worker: int
+    permission: Perm
+    enabled: bool
+    running: bool
+}
+
+class ActivityWorker {
+    Start(path, dependencies)
+}
+
+namespace BuiltinClasses << namespace >> #7ED1E9 {
+}
+
+Class PyApplication {
+    m_id: string
+    m_version: string
+    addDep()
+}
+class ActivityEntry << (S, #FF7700) nested >> #e1d5e7 {
+    main: string
+    daemon: string
+    update: string
+    package: string
+}
+class Dependency << (S, #FF7700) nested >> #e1d5e7 {
+    id: string
+    version: string
+    uri: string
+}
+class Desc << (S, #FF7700) nested >> #e1d5e7{
+    lang: string
+    payload: string
+}
+class Meta << (S, #FF7700) nested >> #e1d5e7{
+    icon: string
+    back: string
+    fanart: string
+    platform: string
+    size: qint64
+    summaries: list<Desc>
+    descriptions: list<Desc>
+    disclaimers: list<Desc>
+}
+
+PyApplication  +-- ActivityEntry
+PyApplication  +-right- Dependency
+PyApplication  +-- Meta
+Meta  +-- Desc
+
+LauncherEngine *-- "*" ActivityWorker: create\n+ start >
+LauncherEngine -right-> Proxy: register\nactivity >
+ActivityWorker --> KvalApplication.BuiltinClasses.AppClass
+KvalApplication.BuiltinClasses.AppClass -up-> Proxy
+
+
+Manager *-- DeploymentEngine
+Manager *-- "1" LauncherEngine
+Manager *-- "1" Proxy
+Proxy *-right-  Activity
+Proxy *-right-  Service
+
+DeploymentEngine -right-> LauncherEngine
+DeploymentEngine *-down- "*" PyApplication
+
+}
+
+Class KvalAppElement {
+    getAvailableApps(): QVariantMap
+    startApp(appid)
+    stopApp(appid)
+}
+
+KvalAppElement --- KvalApplication.Proxy
+KvalAppElement *-- KvalApplication.Manager
+
+' KvalSystemCore -- KvalApplication.CallbackRegister
+
+@enduml

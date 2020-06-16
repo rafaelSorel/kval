@@ -1,0 +1,71 @@
+@startuml
+
+header version 1.0.0
+title Application Framework\nActivity Display Box sequence
+
+participant KvalAppElement << (C,#ADD1B2) >>
+box "KvalApp namespace" 
+participant Proxy << (C,#ADD1B2) >>
+participant ActivityWorker << (C,#ADD1B2) >>
+end box
+box "UserInterface namespace" 
+    participant View << (C,#ADD1B2) >>
+    participant Box << (C,#ADD1B2) >>
+end box
+
+
+activate ActivityWorker
+ActivityWorker -> ActivityWorker: Run application
+activate ActivityWorker
+note left of ActivityWorker : Application\nrunning.
+
+
+create View
+note over of View: Creating a view is optional\nIf no view is specified,\na default view is used.
+ActivityWorker -> View: create()
+ActivityWorker -> View: configure()
+activate View
+ActivityWorker -> View: load()
+View --> Proxy: loadView(workerid, viewConfig)
+note over View: Hold until get the reply.
+activate Proxy
+Proxy -> Proxy: internal check
+
+alt Internal check success
+Proxy --> KvalAppElement: load_view(appid, preferences)
+activate KvalAppElement
+KvalAppElement -> KvalAppElement: check template
+note over KvalAppElement: Check Qml template\nand load it.
+alt load success
+KvalAppElement --> Proxy: loadSuccess(appid, status)
+Proxy --> View: success
+View -> ActivityWorker: return OK
+else load failed
+KvalAppElement --> Proxy: loadFailed(appid, status)
+deactivate KvalAppElement
+Proxy --> View: failed
+View -> ActivityWorker: Raise unable to load view
+end
+else workerid notfound OR not enough privilege
+Proxy -> View: failed
+View -> ActivityWorker: Raise unable to load view
+destroy View
+end
+create Box
+ActivityWorker -> Box: create()
+ActivityWorker -> Box: configure()
+activate Box
+ActivityWorker -> Box: display()
+Box --> Proxy: displayBox(workerid, boxConfig)
+Proxy -> Proxy: internal check
+Proxy --> KvalAppElement: displayBox(boxConfig)
+activate KvalAppElement
+KvalAppElement -> KvalAppElement: user choice
+KvalAppElement --> Proxy: boxreply()
+Proxy --> Box: boxreply()
+Box -> ActivityWorker: reply
+destroy Box
+... ~~delay~~ ...
+
+footer Page %page% of %lastpage%
+@enduml

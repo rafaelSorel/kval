@@ -1,0 +1,146 @@
+{
+  "id": "youtube",
+  "name": "YouTube",
+  "version": "1.0.6",
+  "provider": "",
+  "category": "video",
+  "ui_type": "video",
+  "dependencies": [
+      {
+        "id": "script.module.polib",
+        "version": "1.1.0",
+        "uri": ""
+      },
+      {
+        "id": "script.module.six",
+        "version": "",
+        "uri": ""
+      },
+      {
+        "id": "script.module.requests",
+        "version": "2.12.4",
+        "uri": ""
+      }
+  ],
+  "launcher": {
+    "main": "resources/lib/default.py",
+    "daemon": "resources/lib/startup.py",
+    "update": "resources/lib/update.py",
+    "package": "resources/lib/"
+  },
+  "meta": {
+      "assets": {
+        "icon": "icon.png",
+        "back": "back.png",
+        "fanart": "fanart.png"
+      },
+      "summary": [
+        {
+          "lang": "en_gb",
+          "text": "Plugin for YouTube"
+        },
+        {
+          "lang": "de_de",
+          "text": "Plugin für YouTube"
+        },
+        {
+          "lang": "pl_pl",
+          "text": "Wtyczka YouTube"
+        },
+        {
+          "lang": "hu_hu",
+          "text": "YouTube kiegészítő"
+        },
+        {
+          "lang": "es_es",
+          "text": "Plugin para YouTube"
+        },
+        {
+          "lang": "ru_ru",
+          "text": "Видеодополнение YouTube"
+        },
+        {
+          "lang": "fr_fr",
+          "text": "Plugin pour YouTube"
+        },
+        {
+          "lang": "zh_cn",
+          "text": "YouTube附加元件"
+        },
+        {
+          "lang": "bg_bg",
+          "text": "Добавка за YouTube"
+        },
+        {
+          "lang": "el_gr",
+          "text": "Πρόσθετο YouTube"
+        },
+        {
+          "lang": "nb_no",
+          "text": "Tillegg for YouTube"
+        }
+      ],
+      "description": [
+        {
+          "lang": "en_gb",
+          "text": "YouTube is one of the biggest video-sharing websites of the world."
+        },
+        {
+          "lang": "de_de",
+          "text": "YouTube ist eines der größten Video-Sharing-Websites der Welt."
+        },
+        {
+          "lang": "pl_pl",
+          "text": "YouTube jest jednym z największych na świecie serwisów udostępniania wideo."
+        },
+        {
+          "lang": "hu_hu",
+          "text": "A YouTube világ egyik legnagyobb videómegosztó weboldala."
+        },
+        {
+          "lang": "es_es",
+          "text": "YouTube es uno de los mayores sitios web de intercambio de vídeos del mundo."
+        },
+        {
+          "lang": "ru_ru",
+          "text": "Данное дополнение позволяет находить и смотреть видео на всеми любимом сайте."
+        },
+        {
+          "lang": "fr_fr",
+          "text": "Application YouTube pour kval. Découvrez les contenus regardés partout dans le monde : clips musicaux les plus populaires, dernières tendances des jeux vidéo, divertissement, actualités et bien plus encore. Abonnez-vous aux chaînes que vous aimez, partagez leurs contenus avec vos amis et regardez-les."
+        },
+        {
+          "lang": "zh_cn",
+          "text": "「Youtube」是全世界最大的影片分享網站"
+        },
+        {
+          "lang": "bg_bg",
+          "text": "YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят."
+        },
+        {
+          "lang": "el_gr",
+          "text": "Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο."
+        },
+        {
+          "lang": "nb_no",
+          "text": "YouTube er en av verdens største nettsider for videodeling."
+        }
+      ],
+      "disclaimer": [
+        {
+          "lang": "en_gb",
+          "text": "This plugin is not endorsed by Google"
+        },
+        {
+          "lang": "es_es",
+          "text": "Este add-on no esta respaldado por Google"
+        },
+        {
+          "lang": "el_gr",
+          "text": "Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google"
+        }
+      ],
+      "platform": "all",
+      "size": "1776578"
+    }
+}

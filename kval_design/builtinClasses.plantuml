@@ -1,0 +1,186 @@
+@startuml
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             true
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam ArrowColor            #000000
+skinparam Linetype              ortho
+
+skinparam Class {
+    FontColor #000000
+    BorderColor #000000
+    BackgroundColor #FFFFFF
+    HeaderBackgroundColor #d5e8d4
+    StereotypeFontColor #000000
+    BorderThickness 1
+    AttributeFontColor #000000
+    AttributeFontSize 11
+}
+
+class BuiltinBaseClass  << general >> #F9A59F {
+    m_proxy: Proxy
+    _proxy(): Proxy
+    _shref(): sharedRef
+}
+' note left of BuiltinBaseClass
+'   This is the base class of all builtin 
+'   python classes.
+' end note
+
+namespace UserInterface << namespace >> #7ED1E9 {
+
+    class View {
+        name: string
+        uid: int
+        templateType: TemplateType
+        templatePath: string
+        pageMode: PageMode
+        itemMode: ItemMode
+        configure()
+        load()
+    }
+
+    class Page {
+        label: string
+        items: list<Item>
+        next: Item
+        previous: Item
+        display()
+    }
+
+    class Item {
+        label: string
+        action: string
+        visual: dict{icon, back, fanart}
+        properties: dict{}
+        menu: Menu
+    }
+
+    class ModalBaseDialog << abstract >> #F9A59F {
+        title: string
+        icon: string
+        header: string
+        body: string
+        display()
+        reply(): variant
+        close()
+        abort()
+        isAborted()
+    }
+
+    class Entry {
+        id: int
+        value: string
+        icon: string
+    }
+
+    class Button {
+        rgb: string
+    }
+
+    class SimpleDialog {
+        type: BoxType
+        buttons: list<string>
+        addButton(Button)
+        setButtons(list<Button>)
+        getButtons: list<Button>
+    }
+
+    class InputDialog {
+        type: InputType
+        inputList(list<Entry>)
+        inputFileBrowser(string, string)
+        inputKeyBoard(string)
+    }
+
+    class ProgressBox {
+        value: int
+        update(val)
+    }
+
+    class Menu {
+        title: string
+        entries: list
+        display()
+    }
+
+    class Alert {
+        type: AlertType
+        icon: string
+        header: string
+        body: string
+        timeout: int
+        display()
+        clear()
+    }
+
+    Page o-right- Item
+    Item o-right- Menu
+    ModalBaseDialog +-- Entry
+    Entry <|-- Button
+    ModalBaseDialog <|-- SimpleDialog
+    ModalBaseDialog <|-- InputDialog
+    SimpleDialog <|-- ProgressBox
+    SimpleDialog +-- Button
+
+
+}
+enum BoxType {
+    Invalid
+    Singlebutton
+    Multibutton
+}
+
+enum InputType {
+    Invalid
+    Inputlist
+    Inputkeyboard
+    Inputfilebrowsing
+}
+
+enum ItemMode {
+    BOXWARE
+    RECTANGLEWARE
+    COVERWARE
+}
+enum PageMode {
+    GRID
+    LIST
+}
+enum TemplateType {
+    BUILTIN
+    CUSTOM
+}
+
+' class Application {
+'     version: string
+'     path: string
+'     displaySettings()
+'     setSettings(key, value)
+'     getSettings(key): string
+'     getBasePath(): string
+' }
+
+' class MediaPlayer {
+
+'     play()
+'     stop()
+'     pause()
+'     seek(pos)
+' }
+
+' class AsyncAction {
+'     execAction()
+' }
+
+BuiltinBaseClass <|-- UserInterface.Page
+BuiltinBaseClass <|-- UserInterface.Item
+BuiltinBaseClass <|-- UserInterface.Menu
+BuiltinBaseClass <|-- UserInterface.ModalBaseDialog
+
+BuiltinBaseClass <|-- UserInterface.Alert
+BuiltinBaseClass <|-- UserInterface.View
+
+@enduml

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories>
+    <category title='Config'>
+        <backgroundOverlay1>file://KVAL_RES_PATH/background/background.jpg</backgroundOverlay1>
+        <backgroundOverlay2>file://KVAL_RES_PATH/background/background2_black.png</backgroundOverlay2>
+        <logo/>
+    </category>
+    <category title='STR_MAIN_SCREEN_SEARCH' template="searchFirstTemplate">
+        <backgroundJacket>file://KVAL_RES_PATH/background/search_back.jpg</backgroundJacket>
+    </category>
+      <category title='STR_MAIN_SCREEN_VOD' template="vodFirstTemplate">
+        <backgroundJacket>file://KVAL_RES_PATH/background/vod.jpg</backgroundJacket>
+    </category>
+    <category title='STR_MAIN_SCREEN_LIVE' template="liveTvFirstTemplate">
+        <backgroundJacket>file://KVAL_RES_PATH/background/live_tv.jpg</backgroundJacket>
+    </category>
+    <category title='STR_MAIN_SCREEN_APPS' template="appsFirstTemplate">
+        <backgroundJacket>file://KVAL_RES_PATH/background/apps.jpg</backgroundJacket>
+    </category>
+    <category title='STR_MAIN_SCREEN_MULTIMEDIA' template="localMediaFirstTemplate">
+        <backgroundJacket>file://KVAL_RES_PATH/background/local_media.jpg</backgroundJacket>
+    </category>
+    <category title='STR_MAIN_SCREEN_MAILBOX' template="mailBoxFirstTemplate">
+        <backgroundJacket>file://KVAL_RES_PATH/background/mailBox2.jpg</backgroundJacket>
+    </category>
+    <category title='STR_MAIN_SCREEN_SETTINGS' template="settingsFirstTemplate">
+        <backgroundJacket>file://KVAL_RES_PATH/background/settings.jpg</backgroundJacket>
+    </category>
+</categories>

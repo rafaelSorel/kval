@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tv>
+<programme start="20190228062500 +0100" stop="20190228065800 +0100" channel="Ch1">
+
+<title lang="fr">program 1</title>
+<desc lang="fr">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</desc>
+<date>2018</date>
+<category lang="fr">Divertissement</category>
+
+</programme>
+
+<programme start="20190228065800 +0100" stop="20190228070000 +0100" channel="Ch1">
+<title lang="fr">program 2</title>
+<desc lang="fr">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</desc>
+<date>2019</date>
+<category lang="fr">Divertissement</category>
+</programme>
+
+</tv>

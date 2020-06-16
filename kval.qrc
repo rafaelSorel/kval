@@ -1,0 +1,41 @@
+<RCC>
+    <qresource prefix="/">
+        <file>kval_gui/KvalUI_constant.js</file>
+        <file>kval_gui/KvalUI_EpgGenerator.qml</file>
+        <file>kval_gui/KvalUI_ChannelSelectListView.qml</file>
+        <file>kval_gui/KvalUI_MessagePopUp.qml</file>
+        <file>kval_gui/KvalUI_Utils.js</file>
+        <file>kval_gui/KvalUI_dataloader.js</file>
+        <file>kval_gui/KvalUI_channelInfoView.qml</file>
+        <file>kval_gui/KvalUI_StreamInfoMetaData.qml</file>
+        <file>kval_gui/KvalUI_VodView.qml</file>
+        <file>kval_gui/KvalUI_PyNotificationView.qml</file>
+        <file>kval_gui/KvalUI_VodLaunchView.qml</file>
+        <file>kval_gui/KvalUI_backgroundImagesDb.js</file>
+        <file>kval_gui/KvalUI_MediaPlayerInfoView.qml</file>
+        <file>kval_gui/KvalUI_SubsSurfaceView.qml</file>
+        <file>kval_gui/KvalUI_VirtualKeyBoard.qml</file>
+        <file>kval_gui/KvalUI_MainScreenView.qml</file>
+        <file>kval_gui/KvalUI_BootScreen.qml</file>
+        <file>kval_gui/KvalUI_ServerNotificationCenter.qml</file>
+        <file>kval_gui/KvalUI_MailBoxView.qml</file>
+        <file>kval_gui/KvalUI_FileMediaBrowser.qml</file>
+        <file>kval_gui/KvalUI_SettingsMainView.qml</file>
+        <file>kval_gui/mainscreenitems/VodTemplate.qml</file>
+        <file>kval_gui/mainscreenitems/LiveTvTemplate.qml</file>
+        <file>kval_gui/mainscreenitems/SettingsTemplate.qml</file>
+        <file>kval_gui/mainscreenitems/SearchTemplate.qml</file>
+        <file>kval_gui/mainscreenitems/MessagesTemplate.qml</file>
+        <file>kval_gui/mainscreenitems/DevicesTemplate.qml</file>
+        <file>kval_gui/mainscreenitems/AppsTemplate.qml</file>
+        <file>kval_gui/KvalUI_AppsView.qml</file>
+        <file>kval_gui/appstemplates/VideoTemplate.qml</file>
+        <file>kval_gui/appstemplates/GridMode.qml</file>
+        <file>kval_gui/appstemplates/ListMode.qml</file>
+        <file>kval_gui/appstemplates/navigation_history.js</file>
+        <file>languages/kval_en-US.qm</file>
+        <file>languages/kval_fr-FR.qm</file>
+        <file>kval_gui/KvalUI_GenMainView.qml</file>
+        <file>kval_gui/KvalUI_AmlMainView.qml</file>
+    </qresource>
+</RCC>
